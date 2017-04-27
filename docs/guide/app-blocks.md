@@ -10,8 +10,6 @@ You can add Blocks to your application or to a module. In either case, the folde
 
 For example, we create a Block `TextTransformBlock` and store it in `app/blocks` or `app/modules/yourmodule/blocks`.
 
-> In 1.0.0-beta8 the new *PHP BLOCKS* was introduced. This allows you to use PHP Views instead of TWIG Templates. In order to use The new PHPBlocks you can extend the block from {{\luya\cms\base\PhpBlock}}. PhpBlocks does automatically requires a view file and the `twigAdmin()` is replaced by `admin()` method.
-
 This is what the `TextTransformBlock` could looke like in your code:
 
 ```php
@@ -153,6 +151,24 @@ the following keys are available:
 + **isPrevEqual**: Returns whether the previous item is of the same origin (block type, like text block) as the current.
 + **isNextEqual**: Returns whether the next item is of the same origin (block type, like text block) as the current.
 + **equalIndex**: Get the current index/position of this element within the list of *same* elements.
+
+The properties can help you in order to make a container layout block which auto closes/open the row when working with a grid system like the one from Bootstrap:
+
+```php
+<?php if (!$this->isPrevEqual): ?>
+<div class="row">
+<?php endif; ?>
+
+    <div class="col-md-3">
+       <h1>The Block Content.</h1>
+    </div>
+
+<?php if (!$this->isNextEqual): ?>
+</div>
+<?php endif; ?>
+```
+
+The above example would only open the row element once and closes the row container when the next element is not an element of the current block.
 
 #### Properties from CMS Page
 

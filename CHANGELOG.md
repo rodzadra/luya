@@ -1,9 +1,31 @@
 LUYA CHANGELOG
 ==============
 
-The changelog contains informations about bug fixes, new features or bc breaking code related to a GitHub issue. In order to read more about upgrading and BC breaks have a look at the [UPGRADE Document](UPGRADE.md).
+All notable changes to this project will be documented in this file. This project make usage of the [Yii Versioning Strategy](https://github.com/yiisoft/yii2/blob/master/docs/internals/versions.md). In order to read more about upgrading and BC breaks have a look at the [UPGRADE Document](UPGRADE.md).
 
 1.0.0 (in progress)
+-------------------
+
+### Changed
+
+- [#1277](https://github.com/luyadev/luya/issues/1277) Renamed getPlacholderValue() to getPlaceholderValue().
+- [#1273](https://github.com/luyadev/luya/issues/1273) Mail component remove adresses() replace with addresses().
+- [#1264](https://github.com/luyadev/luya/issues/1264) Renamed $LinkActiveClass property to $linkActiveClass in luya\cms\widgets\LangSwitcher.
+
+### Added
+
+- [#1270](https://github.com/luyadev/luya/issues/1270) Module block set resolved query params into the request component if not strict mode.
+- [#1268](https://github.com/luyadev/luya/issues/1268) Module block strict render ability in order to strict render the given action and controller paths instead of parse them trough the request component.
+- [#1227](https://github.com/luyadev/luya/issues/1227) Added preloadModels() method for the Menu Query in order to collect all models for the given request. This can strongly reduce the sql count when working with properties or models.
+- [#1266](https://github.com/luyadev/luya/issues/1266) render() method for the mailer component in order to provide controller template files.
+- [#1269](https://github.com/luyadev/luya/issues/1269) Add raw option for html block in order to render the html output in admin view.
+
+### Fixed
+
+- [#1267](https://github.com/luyadev/luya/issues/1267) Fixed bug where module block action params overrides the default values, merge instead.
+- [#1265](https://github.com/luyadev/luya/issues/1265) Using https for Google Maps embed code.
+
+1.0.0-RC3 (11. April 2017)
 -------------------
 
 ### Changed

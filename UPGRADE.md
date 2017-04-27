@@ -3,7 +3,10 @@ LUYA UPGRADE
 
 This document will help you upgrading from a LUYA Version into another. For more detailed informations about the breaking changes **click the issue detail link**, there you can examples of how to change your code.
 
-1.0.0-RC3 (in progress)
+1.0.0 (in progress)
+-------------------
+
+1.0.0-RC3 (11. April 2017)
 -------------------
 
 > The kickstarter now refers to the newest composer fxp entry, so make sure to add the new fxp config after run `composer global update`
@@ -15,8 +18,10 @@ This document will help you upgrading from a LUYA Version into another. For more
 >             "bower-asset-library": "vendor/bower"
 >         }
 >     }   
-> },
+> }
 > ```
+
+If there is an error after the migrate command (missing column `title_tag`) sadly you have to create this field manual in table `cms_nav_item` name `title_tag` type `varchar(200)`. This is due to migration prepare for 1.0.0 release.
 
 + [#1127](https://github.com/luyadev/luya/issues/1127) Deprecated Methods, Classes and Properties.
 + [#1076](https://github.com/luyadev/luya/issues/1076) *ALL* your blocks now have to extend from luya\cms\base\PhpBlock. Twig blocks are deprecated! 
